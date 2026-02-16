@@ -2,8 +2,12 @@
 # define FT_LS_H
 
 # define OPTIONS "lRrta"
+# define NO_FILE ""
 #include <dirent.h>
+#include <sys/stat.h>
 #include "libft/libft.h"
+
+
 
 
 typedef struct s_options
