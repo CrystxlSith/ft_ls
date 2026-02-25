@@ -2,8 +2,10 @@
 
 static int	should_swap(t_entry *a, t_entry *b, t_options *opts) {
 	if (opts->t) {
-		if (a->st.st_mtime != b->st.st_mtime)
-			return (a->st.st_mtime < b->st.st_mtime);
+		if (a->st.st_mtim.tv_sec != b->st.st_mtim.tv_sec)
+			return (a->st.st_mtim.tv_sec < b->st.st_mtim.tv_sec);
+		if (a->st.st_mtim.tv_nsec != b->st.st_mtim.tv_nsec)
+			return (a->st.st_mtim.tv_nsec < b->st.st_mtim.tv_nsec);
 		return (ft_strncmp(a->name, b->name, 256) > 0);
 	}
 	return (ft_strncmp(a->name, b->name, 256) > 0);

@@ -76,6 +76,8 @@ void	print_entry(t_entry *e, t_options *opts, int max_nlink, int max_size) {
 			buf[0] = '\0';
 		ft_printf(" %s -> %s\n", e->name, buf);
 	}
-	else
+	else if (opts->l)
 		ft_printf(" %s\n", e->name);
+	else
+		ft_printf("%s\n", e->name);
 }

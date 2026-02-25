@@ -8,6 +8,9 @@
 #include <pwd.h>
 #include <grp.h>
 #include <time.h>
+#include <errno.h>
+#include <string.h>
+#include <stdlib.h>
 #include "libft/libft.h"
 
 
@@ -51,6 +54,8 @@ void	get_max_widths(t_list *entries, int *max_nlink, int *max_size);
 void	print_entry(t_entry *e, t_options *opts, int max_nlink, int max_size);
 
 /** LIST */
+void	print_entries(t_list *entries, t_options *opts);
+void	list_one_dir(const char *path, t_options *opts, int print_header);
 void	list_directories(t_options *opts);
 
 
